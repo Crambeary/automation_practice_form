@@ -47,6 +47,77 @@ class TestHome:
         main_page.enter_last_name("Smith")
         assert main_page.get_text_box_last_name_text() == "Smith"
 
+    def test_radio_gender(self, setup_driver):
+        """Test case selects the genders and checks that it is selected and deselected correctly"""
+        main_page = page.MainPage(self.driver)
+        main_page.select_male_gender()
+        assert main_page.get_value_male_gender()
+        assert not main_page.get_value_female_gender()
+        main_page.select_female_gender()
+        assert main_page.get_value_female_gender()
+        assert not main_page.get_value_male_gender()
+        
+    def test_radio_experience(self, setup_driver):
+        """Test case selects the experience radio buttons and checks that it is selected and deselected correctly"""
+        main_page = page.MainPage(self.driver)
+        main_page.select_experience_1()
+        assert main_page.get_experience() == 1
+        assert not main_page.get_experience() == 2
+        assert not main_page.get_experience() == 3
+        assert not main_page.get_experience() == 4
+        assert not main_page.get_experience() == 5
+        assert not main_page.get_experience() == 6
+        assert not main_page.get_experience() == 7
+        main_page.select_experience_2()
+        assert main_page.get_experience() == 2
+        assert not main_page.get_experience() == 1
+        assert not main_page.get_experience() == 3
+        assert not main_page.get_experience() == 4
+        assert not main_page.get_experience() == 5
+        assert not main_page.get_experience() == 6
+        assert not main_page.get_experience() == 7
+        main_page.select_experience_3()
+        assert main_page.get_experience() == 3
+        assert not main_page.get_experience() == 1
+        assert not main_page.get_experience() == 2
+        assert not main_page.get_experience() == 4
+        assert not main_page.get_experience() == 5
+        assert not main_page.get_experience() == 6
+        assert not main_page.get_experience() == 7
+        main_page.select_experience_4()
+        assert main_page.get_experience() == 4
+        assert not main_page.get_experience() == 1
+        assert not main_page.get_experience() == 2
+        assert not main_page.get_experience() == 3
+        assert not main_page.get_experience() == 5
+        assert not main_page.get_experience() == 6
+        assert not main_page.get_experience() == 7
+        main_page.select_experience_5()
+        assert main_page.get_experience() == 5
+        assert not main_page.get_experience() == 1
+        assert not main_page.get_experience() == 2
+        assert not main_page.get_experience() == 3
+        assert not main_page.get_experience() == 4
+        assert not main_page.get_experience() == 6
+        assert not main_page.get_experience() == 7
+        main_page.select_experience_6()
+        assert main_page.get_experience() == 6
+        assert not main_page.get_experience() == 1
+        assert not main_page.get_experience() == 2
+        assert not main_page.get_experience() == 3
+        assert not main_page.get_experience() == 4
+        assert not main_page.get_experience() == 5
+        assert not main_page.get_experience() == 7
+        main_page.select_experience_7()
+        assert main_page.get_experience() == 7
+        assert not main_page.get_experience() == 1
+        assert not main_page.get_experience() == 2
+        assert not main_page.get_experience() == 3
+        assert not main_page.get_experience() == 4
+        assert not main_page.get_experience() == 5
+        assert not main_page.get_experience() == 6
+    
+        
 
 if __name__ == "__main__":
     pytest.main()

@@ -11,3 +11,8 @@ class MainPageLocators(object):
     SITE_HEADER = (By.CSS_SELECTOR, "#Blog1 > div > article > div > div > h3")
     FIRST_NAME_BOX = (By.CSS_SELECTOR, "#post-body-3077692503353518311 > div:nth-child(1) > div > div:nth-child(3) > input")
     LAST_NAME_BOX = (By.CSS_SELECTOR, "#post-body-3077692503353518311 > div:nth-child(1) > div > div:nth-child(6) > input")
+    
+    GENDER_MALE_RADIO_BUTTON = (By.ID, "sex-0")
+    GENDER_FEMALE_RADIO_BUTTON = (By.ID, "sex-1")
+    
+    RADIO_EXPERIENCE = (By.NAME, "exp")
