@@ -40,7 +40,15 @@ class MainPage(BasePage):
         element = self.driver.find_element(*MainPageLocators.FIRST_NAME_BOX)
         element.send_keys(text)
     
-    def get_text_box_text(self) -> str:
+    def get_text_box_first_name_text(self) -> str:
         element = self.driver.find_element(*MainPageLocators.FIRST_NAME_BOX)
         return element.get_attribute("value")
+    
+    def enter_last_name(self, text) -> None:
+        element = self.driver.find_element(*MainPageLocators.LAST_NAME_BOX)
+        element.send_keys(text)
         
+    def get_text_box_last_name_text(self) -> str:
+        element = self.driver.find_element(*MainPageLocators.LAST_NAME_BOX)
+        return element.get_attribute("value")
+            

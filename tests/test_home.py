@@ -43,7 +43,9 @@ class TestHome:
         """Test case to check that text can be entered into a textbox"""
         main_page = page.MainPage(self.driver)
         main_page.enter_first_name("John")
-        assert main_page.get_text_box_text() == "John"
+        assert main_page.get_text_box_first_name_text() == "John"
+        main_page.enter_last_name("Smith")
+        assert main_page.get_text_box_last_name_text() == "Smith"
 
 
 if __name__ == "__main__":
